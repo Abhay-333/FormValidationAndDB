@@ -23,7 +23,7 @@ user.save().then((result) => {
 exports.getform = (req, res) => {
   Form.fetchAll()
     .then(user => {
-       res.json("success",user);//for testing an api in postman
+       res.json(user);//for testing an api in postman
      
       //res.render('success');//frontend part
     })
