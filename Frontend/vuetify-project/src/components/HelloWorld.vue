@@ -27,7 +27,7 @@
               type="text"
               variant="outlined"
               color="primary"
-              prepend-inner-icon="mdi-email-outline"
+              prepend-inner-icon="mdi-account"
               density="comfortable"
               rounded="lg"
             ></v-text-field>
@@ -38,7 +38,7 @@
               type="email"
               variant="outlined"
               color="primary"
-              prepend-inner-icon="mdi-email-outline"
+              prepend-inner-icon="mdi-lock-outline"
               density="comfortable"
               rounded="lg"
             ></v-text-field>
