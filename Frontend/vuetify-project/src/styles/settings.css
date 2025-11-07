@@ -3,32 +3,24 @@
  *
  * Configures SASS variables and Vuetify overwrites
  */
-
-// https://vuetifyjs.com/features/sass-variables/`
-// @use 'vuetify/settings' with (
-//   $color-pack: false
-// );
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
   width: 100%;
 }
-@mixin flexCenter(){
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .page1 {
-background-color: rgb(246, 9, 9);
+  background-color: rgb(246, 9, 9);
   background-color: #3b3b3b;
   background-color: #282727;
   height: 93vh;
-  @include flexCenter()
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=settings.css.map */
