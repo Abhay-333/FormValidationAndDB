@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors = require('cors');
 
 const path = require('path');
 const formcontroller = require('./controllers/formcontroller');
@@ -11,7 +11,10 @@ app.use(methodOverride('_method'));
 app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-
+app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:3000' // frontend // cross origin resource sharing
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -23,7 +26,7 @@ app.put('/api/users/:id',formcontroller.updateuserbyid);
 app.use((req, res) => {
   res.status(404).send('<h1>Page Not Found</h1>');
 });
-const port=3000;
+const port=8000;  // backend cha port
 mongoconnect(()=>{
 app.listen(port, () => {
  console.log(`server running on http://localhost:${port}`);
