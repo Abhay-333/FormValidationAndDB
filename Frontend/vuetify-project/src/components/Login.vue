@@ -185,13 +185,14 @@ const router = useRouter();
 const isLoading = ref(false);
 
 const initialValues = {
-  fullName: "Tanish",
-  email: "Bhai@gmail.com",
+  fullName: "Tanish2",
+  email: "Bhai1@gmail.com",
   password: "123456",
   confirmPassword: "123456",
   role: "Student",
   phone: "1234567890",
   address: "Pune",
+  userId: 1,
 };
 
 const schema = {

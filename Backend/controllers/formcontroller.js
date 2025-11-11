@@ -32,20 +32,21 @@ exports.getform = (req, res) => {
     });
 };
 
-exports.getuserbyid= async (req, res) => {
-  try {
-    const userId = req.params.id;
-    const user = await Form.findById(userId);
+// exports.getuserbyid= async (req, res) => {
+//   try {
+//     const userId = req.params.id;
+//     const user = await Form.findById(userId);
 
-    if (!user) {
-      return res.status(404).json({ success: false, message: 'User not found' });
-    }
+//     if (!user) {
+//       return res.status(404).json({ success: false, message: 'User not found' });
+//     }
 
-    res.json({ success: true, data: user });
-  } catch (err) {
-    res.status(400).json({ success: false, message: err.message });
-  }
-};
+//     res.json({ success: true, data: user });
+//   } catch (err) {
+//     res.status(400).json({ success: false, message: err.message });
+//   }
+// };
+
 
 exports.updateuserbyid = async (req, res) => {
   try {

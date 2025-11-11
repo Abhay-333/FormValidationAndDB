@@ -11,18 +11,22 @@ app.use(methodOverride('_method'));
 app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-app.use(cors())
+// app.use(cors())
 app.use(cors({
-  origin: 'http://localhost:3000' // frontend // cross origin resource sharing
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 }));
+// app.options('*', cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', formcontroller.getform);
 app.post('/api/users',formcontroller.postform);
-app.get('/api/users/:id',formcontroller.getuserbyid);
-app.put('/api/users/:id',formcontroller.updateuserbyid);
+// app.get('/api/users/:id',formcontroller.getuserbyid);
+app.patch('/api/users/:id',formcontroller.updateuserbyid);
 app.use((req, res) => {
   res.status(404).send('<h1>Page Not Found</h1>');
 });
